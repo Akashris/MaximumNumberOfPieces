@@ -74,7 +74,7 @@ namespace MaximumNumberOfPieces
                 /*MaximumSegments[LoopIndex] = NumberOfPoints[LoopIndex] * (NumberOfPoints[LoopIndex] - 1) / 2;
                 MaximumSegments[LoopIndex] += NumberOfPoints[LoopIndex] * (NumberOfPoints[LoopIndex] - 1) * (NumberOfPoints[LoopIndex] - 2) * (NumberOfPoints[LoopIndex] - 3) / 24;
                 MaximumSegments[LoopIndex] += 1;*/
-                if ((NumberOfPoints[LoopIndex] < 0) || (NumberOfPoints[LoopIndex] >= 'a' && NumberOfPoints[LoopIndex] <= 'z') || (NumberOfPoints[LoopIndex] >= 'A' && NumberOfPoints[LoopIndex] <= 'Z') || (NumberOfPoints[LoopIndex] > 2147483648))
+                if ((NumberOfPoints[LoopIndex] < 0) || (NumberOfPoints[LoopIndex] > 2147483648))
                 {
 
                     MaximumSegments.Add(0);
