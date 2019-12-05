@@ -2,6 +2,6 @@ C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPiece
 C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\obj\Debug\MaximumNumberOfPieces.csproj.CoreCompileInputs.cache
 C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\bin\Debug\MaximumNumberOfPieces.pdb
 C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\obj\Debug\MaximumNumberOfPieces.pdb
-C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\bin\Debug\MaximumNumberOfPieces.dll.config
-C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\bin\Debug\MaximumNumberOfPieces.dll
-C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\obj\Debug\MaximumNumberOfPieces.dll
+C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\bin\Debug\MaximumNumberOfPieces.exe.config
+C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\bin\Debug\MaximumNumberOfPieces.exe
+C:\Users\akash\Desktop\NumberOfPieces\MaximumNumberOfPieces\MaximumNumberOfPieces\obj\Debug\MaximumNumberOfPieces.exe

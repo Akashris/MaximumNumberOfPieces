@@ -8,18 +8,17 @@ namespace MaximumNumberOfPieces
 {
     class EllipticalLand
     {
-        int Iteration = -1, LoopIndex;
-        //Int64[] NumberOfPoints = new Int64[3500];
-        List<BigInteger> NumberOfPoints = new List<BigInteger>();
+        int iteration = -1, loopIndex;
+        List<BigInteger> numberOfPoints = new List<BigInteger>();
         public List<BigInteger> GetValue()
         {
-            while (Iteration <= 0)
+            while (iteration <= 0)
             {
                 try
                 {
                     Console.WriteLine("Enter the Number of Iterations");
-                    Iteration = Convert.ToInt32(Console.ReadLine());
-                    if (Iteration <= 0)
+                    iteration = Convert.ToInt32(Console.ReadLine());
+                    if (iteration <= 0)
                     {
                         Console.WriteLine("Enter a Positive or a Non Zero Integer Input");
                     }
@@ -36,70 +35,53 @@ namespace MaximumNumberOfPieces
             }
             Console.WriteLine("Enter The Arbitary Points");
             Console.WriteLine("\nEnter the Arbitary Points one below other");
-            for (LoopIndex = 0; LoopIndex < Iteration; LoopIndex++)
+            for (loopIndex = 0; loopIndex < iteration; loopIndex++)
             {
                 try
                 {
-                    //NumberOfPoints[LoopIndex] = Convert.ToInt32(Console.ReadLine());
-                    NumberOfPoints.Add(Convert.ToInt64(Console.ReadLine()));
-                    if (NumberOfPoints[LoopIndex] < 0)
+                    numberOfPoints.Add(Convert.ToInt64(Console.ReadLine()));
+                    if (numberOfPoints[loopIndex] < 0)
                     {
-                        NumberOfPoints.RemoveAt(LoopIndex);
-                        LoopIndex = LoopIndex - 1;
+                        numberOfPoints.RemoveAt(loopIndex);
+                        loopIndex = loopIndex - 1;
                         Console.WriteLine("Enter a Positive Value or a Zero");
-                        //Console.WriteLine("\n");
+
                     }
                     else
                     {
-                        LoopIndex = LoopIndex;
+                        continue;
                     }
-                    //Console.WriteLine(NumberOfPoints[LoopIndex]);
 
                 }
                 catch (FormatException)
                 {
-                    //NumberOfPoints.RemoveAt(LoopIndex);
-                    LoopIndex = LoopIndex - 1;
+                    loopIndex = loopIndex - 1;
                     Console.WriteLine("Enter a Valid Number");
                 }
             }
-            return NumberOfPoints;
+            return numberOfPoints;
         }
 
-        public List<BigInteger> Calculation(List<BigInteger> NumberOfPoints)
+        public List<BigInteger> CalculationMaximumPieces(List<BigInteger> numberOfPoints)
         {
-            List<BigInteger> MaximumSegments = new List<BigInteger>();
-            for (LoopIndex = 0; LoopIndex < NumberOfPoints.Count; LoopIndex++)
+            List<BigInteger> maximumSegments = new List<BigInteger>();
+            for (loopIndex = 0; loopIndex < numberOfPoints.Count; loopIndex++)
             {
-                /*MaximumSegments[LoopIndex] = NumberOfPoints[LoopIndex] * (NumberOfPoints[LoopIndex] - 1) / 2;
-                MaximumSegments[LoopIndex] += NumberOfPoints[LoopIndex] * (NumberOfPoints[LoopIndex] - 1) * (NumberOfPoints[LoopIndex] - 2) * (NumberOfPoints[LoopIndex] - 3) / 24;
-                MaximumSegments[LoopIndex] += 1;*/
-                if ((NumberOfPoints[LoopIndex] < 0) || (NumberOfPoints[LoopIndex] > 2147483648))
-                {
 
-                    MaximumSegments.Add(0);
-                    // Console.WriteLine(MaximumSegments[LoopIndex]);
+                maximumSegments.Add(numberOfPoints[loopIndex] * (numberOfPoints[loopIndex] - 1) / 2 + numberOfPoints[loopIndex] * (numberOfPoints[loopIndex] - 1) * (numberOfPoints[loopIndex] - 2) * (numberOfPoints[loopIndex] - 3) / 24 + 1);
 
-                }
-                else
-                {
-                    MaximumSegments.Add(NumberOfPoints[LoopIndex] * (NumberOfPoints[LoopIndex] - 1) / 2 + NumberOfPoints[LoopIndex] * (NumberOfPoints[LoopIndex] - 1) * (NumberOfPoints[LoopIndex] - 2) * (NumberOfPoints[LoopIndex] - 3) / 24 + 1);
-                    //Console.WriteLine("For {0} Arbitrary Point, Maximum Number Pieces of Land Possible is {1} ", NumberOfPoints[LoopIndex], MaximumSegments[LoopIndex]);
-                    //Console.WriteLine(MaximumSegments[LoopIndex]);
-                }
             }
 
-            return MaximumSegments;
+            return maximumSegments;
         }
 
 
         static void Main(string[] args)
         {
-            List<BigInteger> NumberOfPoints = new List<BigInteger>();
+            List<BigInteger> numberOfPoints = new List<BigInteger>();
             EllipticalLand obj = new EllipticalLand();
-            NumberOfPoints = obj.GetValue();
-            // NumberOfPoints =
-            List<BigInteger> result = obj.Calculation(NumberOfPoints);
+            numberOfPoints = obj.GetValue();
+            List<BigInteger> result = obj.CalculationMaximumPieces(numberOfPoints);
             foreach (var value in result)
             {
                 Console.WriteLine(value);
