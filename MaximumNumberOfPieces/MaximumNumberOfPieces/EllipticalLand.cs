@@ -10,6 +10,8 @@ namespace MaximumNumberOfPieces
     {
         int iteration = -1, loopIndex;
         List<BigInteger> numberOfPoints = new List<BigInteger>();
+
+        //Getting Inputs From The User
         public List<BigInteger> GetValue()
         {
             while (iteration <= 0)
@@ -18,7 +20,7 @@ namespace MaximumNumberOfPieces
                 {
                     Console.WriteLine("Enter the Number of Iterations");
                     iteration = Convert.ToInt32(Console.ReadLine());
-                    if (iteration <= 0)
+                    if (iteration <= 0)//Validating the user input
                     {
                         Console.WriteLine("Enter a Positive or a Non Zero Integer Input");
                     }
@@ -40,7 +42,7 @@ namespace MaximumNumberOfPieces
                 try
                 {
                     numberOfPoints.Add(Convert.ToInt64(Console.ReadLine()));
-                    if (numberOfPoints[loopIndex] < 0)
+                    if (numberOfPoints[loopIndex] < 0)//Validating the user input
                     {
                         numberOfPoints.RemoveAt(loopIndex);
                         loopIndex = loopIndex - 1;
@@ -62,6 +64,7 @@ namespace MaximumNumberOfPieces
             return numberOfPoints;
         }
 
+        //Calculting The Maximum Number Of Pieces
         public List<BigInteger> CalculationMaximumPieces(List<BigInteger> numberOfPoints)
         {
             List<BigInteger> maximumSegments = new List<BigInteger>();
@@ -78,11 +81,11 @@ namespace MaximumNumberOfPieces
 
         static void Main(string[] args)
         {
-            List<BigInteger> numberOfPoints = new List<BigInteger>();
+            List<BigInteger> numberOfPoints = new List<BigInteger>();  //Creating An Object For The Class
             EllipticalLand obj = new EllipticalLand();
             numberOfPoints = obj.GetValue();
             List<BigInteger> result = obj.CalculationMaximumPieces(numberOfPoints);
-            foreach (var value in result)
+            foreach (var value in result)   //Printing The Final Result
             {
                 Console.WriteLine(value);
             }
