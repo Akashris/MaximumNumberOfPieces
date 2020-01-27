@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace MaximumNumberOfPieces
 {
-    class EllipticalLand
+    public class EllipticalLand
     {
         int iteration = -1, loopIndex;
         List<BigInteger> numberOfPoints = new List<BigInteger>();
@@ -35,6 +35,8 @@ namespace MaximumNumberOfPieces
                 }
 
             }
+            //
+
             Console.WriteLine("Enter The Arbitary Points");
             Console.WriteLine("\nEnter the Arbitary Points one below other");
             for (loopIndex = 0; loopIndex < iteration; loopIndex++)
@@ -74,6 +76,19 @@ namespace MaximumNumberOfPieces
                 maximumSegments.Add(numberOfPoints[loopIndex] * (numberOfPoints[loopIndex] - 1) / 2 + numberOfPoints[loopIndex] * (numberOfPoints[loopIndex] - 1) * (numberOfPoints[loopIndex] - 2) * (numberOfPoints[loopIndex] - 3) / 24 + 1);
 
             }
+            List<BigInteger> result=new List<BigInteger>();
+            for (loopIndex = 0; loopIndex < numberOfPoints.Count; loopIndex++)
+            {
+                result.Add(-1);
+                if(numberOfPoints[loopIndex]<0)
+                {
+                    return result;
+                }
+                else
+                {
+                    result.Add(1);
+                }
+            }
 
             return maximumSegments;
         }
@@ -81,8 +96,8 @@ namespace MaximumNumberOfPieces
 
         static void Main(string[] args)
         {
-            List<BigInteger> numberOfPoints = new List<BigInteger>();  //Creating An Object For The Class
-            EllipticalLand obj = new EllipticalLand();
+            List<BigInteger> numberOfPoints = new List<BigInteger>();  
+            EllipticalLand obj = new EllipticalLand();  //Creating An Object For The Class
             numberOfPoints = obj.GetValue();
             List<BigInteger> result = obj.CalculationMaximumPieces(numberOfPoints);
             foreach (var value in result)   //Printing The Final Result
